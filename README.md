@@ -34,17 +34,22 @@ Detects market state i.e. Bullish, Bearish, Sideways and applies specific weight
 Aggregates weighted scores to compute a total score, capping individual and total scores to maintain consistency.
 Uses bullish candlestick patterns from the previous close as a confirmation signal.
 Generates trading signals and executes trades on the Binance exchange.
+
 Applications
 Trading Signal Generation: The composite score drives automated trading decisions, enabling seamless execution of buy, sell, or hold actions.
+
 Risk Management: Indicator scores provide insights into market risk, allowing for dynamic position adjustments.
 Portfolio Allocation: Scores guide asset selection, prioritising those with favourable market conditions.
+
 Key Considerations
 Weighting: Indicator weights significantly influence the composite score. These are iteratively optimised through genetic algorithms based on back-testing results.
 Score Capping: Limits extreme values to ensure a stable scoring range.
 Interpretation: Higher scores indicate bullish sentiment, while lower scores suggest bearish conditions. However, traders should consider broader market contexts and external factors as well as technical analysis.
+
 Back-Testing: The system employs historical data to validate strategies, using Python and libraries like DEAP (genetic algorithms), TA-Lib (technical analysis), Pandas, and NumPy (data manipulation).
+
 Back-Testing Framework
-The QBot Trading System includes a robust back-testing module to optimise performance and refine trading parameters.
+The QBot Trading System includes a robust standalone back-testing module to optimise performance and refine trading parameters.
 Libraries Utilised
 DEAP: Implements genetic algorithms to optimise indicator weights and thresholds.
 TA-Lib: Provides technical analysis functions for RSI, MAs, BBs, EMAs, MACD, and Ichimoku Cloud.
@@ -63,5 +68,5 @@ Summary and Analysis: Aggregates back-test results to provide actionable insight
 
 Genetic Algorithm Optimisation: Evolves indicator weights and thresholds over multiple generations to maximise returns.
 Best-performing parameters are extracted for further refinement or integration with AI-driven analysis.
-Summary
+
 The QBot Trading System, developed by Project Qultra, is a sophisticated, automated trading solution designed to streamline cryptocurrency trading on the Binance exchange. By combining a unique scoring system, advanced technical indicators, and genetic algorithm optimisation, the system delivers data-driven trading signals with minimal manual intervention. Ongoing back-testing and parameter optimisation ensure the system adapts to evolving market conditions, making it a powerful tool for traders seeking to enhance efficiency and profitability.
