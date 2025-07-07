@@ -6,6 +6,7 @@ Project Qultra has developed an advanced software solution designed to automate 
 The primary objective of the QBot Trading System is to enable seamless automated trading using the daily chart timeframe. Analysing Bitcoin, plus multiple altcoin tickers per run with no manual technical analysis required. This allows traders to efficiently capitalise on market opportunities with minimal effort.
 
 System Functionality
+
 The QBot Trading System evaluates market conditions using a suite of widely recognised technical indicators, each contributing to a composite score that informs trading decisions. The indicators include:
 Relative Strength Index (RSI): Assesses the magnitude of recent price changes, with specialised logic for extreme overbought or oversold conditions.
 Moving Averages (MAs): Compares the latest closing price to 50-day and 200-day moving averages to identify trends.
