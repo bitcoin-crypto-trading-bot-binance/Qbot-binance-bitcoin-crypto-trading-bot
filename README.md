@@ -5,9 +5,7 @@ Binance Bitcoin and Crypto Automated Trading Bot. QBot Automated Bitcoin and Alt
 Project Qultra has developed an advanced software solution designed to automate Bitcoin and altcoin cryptocurrency trading using the Binance API. The system retrieves real-time ticker data, conducts in-depth technical analysis using a unique blended scoring algorithm, generates actionable trading signals (BUY, SELL, or HODL), and automatically executes trades, including setting buy, sell, (stop-loss and take-profit) orders on the exchange.
 The primary objective of the QBot Trading System is to enable seamless automated trading using the daily chart timeframe. Analysing Bitcoin, plus multiple altcoin tickers per run with no manual technical analysis required. This allows traders to efficiently capitalise on market opportunities with minimal effort.
 
-System Functionality
-
-The QBot Trading System evaluates market conditions using a suite of widely recognised technical indicators, each contributing to a composite score that informs trading decisions. The indicators include:
+System Functionality: The QBot Trading System evaluates market conditions using a suite of widely recognised technical indicators, each contributing to a composite score that informs trading decisions. The indicators include:
 Relative Strength Index (RSI): Assesses the magnitude of recent price changes, with specialised logic for extreme overbought or oversold conditions.
 Moving Averages (MAs): Compares the latest closing price to 50-day and 200-day moving averages to identify trends.
 Bollinger Bands (BBs): Measures price volatility and detects overbought or oversold conditions.
