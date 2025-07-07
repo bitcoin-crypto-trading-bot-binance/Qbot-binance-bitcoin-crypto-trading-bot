@@ -14,39 +14,39 @@ Moving Average Convergence Divergence (MACD): A trend-following momentum indicat
 Ichimoku Cloud (Ichimoku Kinko Hyo): A comprehensive indicator providing insights into support, resistance, momentum, and trend direction.
 Volume and Volatility: Incorporates trading volume and market volatility to enhance decision-making.
 
-Inputs
+Inputs:
 Latest closing price of the asset.
 RSI, Bollinger Bands (upper/lower), MA (50-day, 200-day), EMA (20-day, 100-day), MACD, and Ichimoku Cloud values.
 Volume and volatility metrics.
 Configurable weights for each indicator in the scoring model.
 Capping thresholds for individual and total scores.
 
-Outputs
+Outputs:
 Individual scores for RSI, MAs, BBs, EMAs, MACD, Ichimoku Cloud, volume, and volatility.
 A composite total score representing market sentiment.
 Trading signal (BUY, SELL, or HODL) based on predefined thresholds.
 
-Logic
+Logic:
 Calculates individual indicator scores using specific formulas and input values.
 Detects market state i.e. Bullish, Bearish, Sideways and applies specific weights and thresholds tuned for that state.
 Aggregates weighted scores to compute a total score, capping individual and total scores to maintain consistency.
 Uses bullish candlestick patterns from the previous close as a confirmation signal.
 Generates trading signals and executes trades on the Binance exchange.
 
-Applications
+Applications:
 Trading Signal Generation: The composite score drives automated trading decisions, enabling seamless execution of buy, sell, or hold actions.
 
 Risk Management: Indicator scores provide insights into market risk, allowing for dynamic position adjustments.
 Portfolio Allocation: Scores guide asset selection, prioritising those with favourable market conditions.
 
-Key Considerations
+Key Considerations:
 Weighting: Indicator weights significantly influence the composite score. These are iteratively optimised through genetic algorithms based on back-testing results.
 Score Capping: Limits extreme values to ensure a stable scoring range.
 Interpretation: Higher scores indicate bullish sentiment, while lower scores suggest bearish conditions. However, traders should consider broader market contexts and external factors as well as technical analysis.
 
 Back-Testing: The system employs historical data to validate strategies, using Python and libraries like DEAP (genetic algorithms), TA-Lib (technical analysis), Pandas, and NumPy (data manipulation).
 
-Back-Testing Framework
+Back-Testing Framework:
 The QBot Trading System includes a robust standalone back-testing module to optimise performance and refine trading parameters.
 Libraries Utilised
 DEAP: Implements genetic algorithms to optimise indicator weights and thresholds.
@@ -54,7 +54,7 @@ TA-Lib: Provides technical analysis functions for RSI, MAs, BBs, EMAs, MACD, and
 Pandas/NumPy: Facilitates efficient data manipulation and analysis.
 Multiprocessing: Enables parallel back-testing across multiple tickers for enhanced performance.
 
-Core Components
+Core Components:
 Back-Testing Function: Retrieves historical ticker data for a specified period.
 Applies technical indicators to compute scores and simulate trades.
 Evaluates performance metrics, including returns, win rate, Sharpe ratio, and maximum drawdown.
