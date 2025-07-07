@@ -36,7 +36,7 @@ Generates trading signals and executes trades on the Binance exchange.
 Applications:
 Trading Signal Generation: The composite score drives automated trading decisions, enabling seamless execution of buy, sell, or hold actions.
 
-Risk Management: Indicator scores provide insights into market risk, allowing for dynamic position adjustments.
+Risk Management: Indicator scores provide insights into market risk.
 Portfolio Allocation: Scores guide asset selection, prioritising those with favourable market conditions.
 
 Key Considerations:
