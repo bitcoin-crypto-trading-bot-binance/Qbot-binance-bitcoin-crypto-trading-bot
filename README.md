@@ -7,7 +7,7 @@ Project Qultra is developing an advanced software solution designed to automate 
 Disclaimer
 This project is an an early stage. I'm sharing the code for testing and feedback. I'll hopefully find a few others who are interested in contributing to the project. Please use the Binance testnet until you are fully familiar with how this code works. It's very customisable. Slight changes can make a big difference to results. Use minimal amounts of crypto when live trading, and only once you are happy with how it operates. Consider setting to trade in bullish or sideways markets only, avoiding bear markets. Consider using confirmations and breakout detections, basically all available mechanisms to help avoid loses. Aim to utilise strategies that involve less frequent trades with stronger signals and scoring.
 
-Do not load up the bot and run without digging into the configuration and understanding all parameters. Also that you have used the bot in testnet for an extended duration. This is not a get rich quick bot. Nor is there any guarantee of profit.
+Do not load up the bot and run without digging into the configuration and understanding all parameters. Also ensure you have used the bot in testnet for an extended duration. Note that binance testnet data can vary from real-time data. This is not a get rich quick bot. Nor is there any guarantee of profit.
 
 This software is for educational purposes only. Do not risk money which you are afraid to lose. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.
 
