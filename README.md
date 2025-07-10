@@ -7,17 +7,17 @@ Project Qultra is developing an advanced software solution designed to automate 
 Disclaimer
 This project is an an early stage. I'm sharing the code for testing and feedback. I'll hopefully find a few others who are interested in contributing to the project. Please use the Binance testnet until you are fully familiar with how this code works. It's very customisable. Slight changes can make a big difference to results. Use minimal amounts of crypto when live trading, and only once you are happy with how it operates. Consider setting to trade in bullish or sideways markets only, avoiding bear markets. Consider using confirmations and breakout detections, basically all available mechanisms to help avoid loses. Aim to utilise strategies that involve less frequent trades with stronger signals and scoring.
 
-Do not load up and run without digging into and understanding all parameters. Also that you have used the bot in testnet for an extended duration. This is not a get rich quick bot. Nor is there any guarantee of profit.
+Do not load up the bot and run without digging into tge configuration and understanding all parameters. Also that you have used the bot in testnet for an extended duration. This is not a get rich quick bot. Nor is there any guarantee of profit.
 
 This software is for educational purposes only. Do not risk money which you are afraid to lose. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.
 
 Again, always start by running the bot in testnet and do not engage real money before you fully understand how it works and what profit/loss you should expect.
 
-We strongly recommend you have coding and Python knowledge before using this bot. Please read the source code to fully understand this bot.
+It's strongly recommended that you have coding and Python knowledge before using this bot. Please read the source code to fully understand this bot.
 
 All investment strategies and investments involve risk of loss. Nothing contained in this program, scripts, code or repository should be construed as investment advice. Any reference to an investment's past or potential performance is not, and should not be construed as, a recommendation, or as a guarantee of any specific outcome or profit. By using this program you accept all liabilities, and that no claims can be made against the developers or others connected with this project.
 
-The primary objective of the QBot Trading System is to enable seamless automated trading using the daily chart timeframe. Analysing Bitcoin, plus multiple altcoin tickers per run with no manual technical analysis required. This allows traders to efficiently capitalise on market opportunities with minimal effort.
+The primary objective of the QultraBot Trading System is to enable seamless automated trading using the daily chart timeframe. Analysing Bitcoin, plus multiple altcoin tickers per run with no manual technical analysis required. This allows traders to efficiently capitalise on market opportunities with minimal effort.
 
 System Functionality: The QultraBot Trading System evaluates market conditions using a suite of widely recognised technical indicators, each contributing to a composite score that informs trading decisions. The indicators include:
 Relative Strength Index (RSI): Assesses the magnitude of recent price changes, with specialised logic for extreme overbought or oversold conditions.
