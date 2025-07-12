@@ -1,0 +1,254 @@
+YOU MUST DO THESE STEPS!
+1. Install all dependencies
+2. Create .env file for your API keys in same folder as main.py
+3. Run main.py (Tested with Python 3.11) - leave script running 24/7.
+
+DONATIONS WELCOME:
+
+BTC: bc1qwglt7lam20wdrlrvjrx6uafpxkam6s65vt36e0
+ETH: 0xac6536a8189aad7c41a2df3d0198d30a51573fe7
+SOL: 9BenrrY2YB5gZDJZwDHqQ6acDAKgwCK6wZf2afWZr3WU
+XRP: rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV    +memo: 387902243     
+USDT: 0xac6536a8189aad7c41a2df3d0198d30a51573fe7
+USDC: 0xac6536a8189aad7c41a2df3d0198d30a51573fe7
+BNB: 0xac6536a8189aad7c41a2df3d0198d30a51573fe7
+DOGE: DHSBayR2C1ydumPRR2D7m5JQJYQ2sXT4Sa
+TRON: THLKoAGVVLP1hLgN38HwHYtCbXyNGd7rHM
+ADA: addr1vy07j5kng9ktrev6tkedkfvelw2f2y4e7gaeh7p4xkr8z4s5d37fd
+
+
+Disclaimer
+This project is at an early stage. I'm sharing the code for testing and feedback. I'll hopefully find a few others who are interested in contributing to the project. Especially keen to find anyone interested in back testing and tuning parameters as well as adding features and debugging issues. Please use the Binance testnet until you are fully familiar with how this code works. It's very customisable. Slight changes to weights and thresholds can make a big difference to results. Use minimal amounts of crypto when live trading, and only once you are happy with how it operates. Consider setting to trade in bullish or sideways markets only, avoiding bear markets. Consider using confirmations and breakout detections. Basically consider using all available mechanisms to help avoid loses, even if this results in far fewer trades. Consider utilising strategies that involve less frequent trades with higher scoring and confirmation signals.
+
+Do not load up the bot and run without digging into the configuration and understanding all parameters. Also ensure you have used the bot in testnet for an extended duration. Note that binance testnet data can vary from real-time data. This is not a get rich quick bot. Nor is there any guarantee of profit. You could lose all your crypto!!
+
+This software is for educational purposes only. Do not risk money which you are afraid to lose. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.
+
+Overview
+QultraBot is a powerful Python-based automated trading system designed to interact with the Binance API for cryptocurrency trading. It performs technical analysis on specified tickers, generates buy/sell/hodl signals based on a weighted scoring system, and executes trades with risk management features like stop-loss and take-profit orders. The bot supports market state-specific strategies (bullish, bearish, sideways) and includes visualisation tools for price data and technical indicators. It is initially designed for users with intermediate to advanced programming and trading knowledge. With future intentions to roll out with a simplified user interface.
+
+The script operates on the daily timeframe, processing tickers, generating signals, and placing orders while adhering to portfolio concentration limits and Binance API constraints. It includes robust logging, error handling, and support for both mainnet and testnet environments.
+
+It is suggested to run this 24/7 on a micro PC requiring minimal power to run. If you have any long term HODL in binance the bot will attempt to sell them. So you can either set a sell order at high price to ensure crypto is not free for bot to sell, or move to a separate hardware wallet for longer term hodl.
+
+Features
+Technical Analysis:
+Indicators: RSI, Bollinger Bands, Moving Averages (50, 200), EMAs (20, 100), MACD, Ichimoku Cloud, volume analysis.
+Candlestick pattern recognition (e.g., Bullish Engulfing, Bearish Harami).
+Breakout/breakdown detection for resistance/support levels.
+
+Market state identification (bullish, bearish, sideways) based on MA slope, price change, and volatility.
+
+Trading Logic:
+Weighted scoring system for buy/sell/hold signals, adjustable per market state.
+
+Market state-specific buy percentages: e.g. 10% (bullish), 5% (sideways), 2% (bearish) or option to disable bearish market status trading.
+
+Portfolio concentration limit (e.g. 20% max per coin).
+
+Stop-loss (trailing or regular) and take-profit orders.
+
+Time-restricted buying (00:00–00:15 UTC, optional).
+
+Force buy option for testing specific tickers for testing.
+
+Visualisation:
+Plots price, MAs, EMAs, Bollinger Bands, Ichimoku Cloud, MACD, and volume with support/resistance levels.
+
+Saves charts as PNG files with trade action watermarks.
+
+Scheduling:
+Runs daily at 00:10 UTC and hourly from 01:00 to 23:00 UTC.
+
+Cleans old files to manage disk space.
+
+Order Management:
+Tracks pending orders in a JSON file.
+Monitors active algo orders (stop-loss, take-profit).
+Ensures compliance with Binance’s minimum notional and lot size requirements.
+
+Logging and Error Handling:
+Detailed logging to trading_bot.log and console.
+Handles Binance API exceptions and general errors with retries.
+
+Testnet Support:
+Compatible with Binance Testnet for strategy testing without real funds.
+
+Installation
+Prerequisites
+Operating System: Windows (script uses Windows-specific paths; modify for other OS).
+Python: Version 3.8 or higher.
+Binance Account: API keys for mainnet and/or testnet (create at Binance or Binance Testnet).
+Internet Connection: Stable connection for API calls.
+
+Dependencies
+The script requires the following Python packages. Install them using pip:
+
+pip install python-binance requests beautifulsoup4 numpy pandas matplotlib python-dotenv psutil schedule pytz tenacity
+Additionally, install the TA-Lib library for technical indicators:
+
+Windows: Download a precompiled wheel from Unofficial Windows Binaries and install, e.g.:
+
+pip install TA_Lib-0.4.24-cp39-cp39-win_amd64.whl
+
+Installation Steps
+Clone or Download the Script:
+
+Save the files in a dedicated directory (e.g., C:\QultraBot).
+
+Set Up Environment Variables:
+Create a .env file in the script’s directory with your Binance API keys:
+plaintext
+
+BINANCE_API_KEY=your_mainnet_api_key
+BINANCE_API_SECRET=your_mainnet_api_secret
+BINANCE_API_KEY2=your_testnet_api_key
+BINANCE_API_SECRET2=your_testnet_api_secret
+
+
+Configure File Paths:
+The script uses Windows-specific paths (e.g., C:\qultrabot). Update these paths in the script to match your system:
+
+Ensure the directory exists and has write permissions.
+
+Install Dependencies:
+Run the pip install commands above to install all required packages.
+
+Verify Setup:
+Run the script with testnet enabled to ensure dependencies and API keys work:
+python
+
+python main.py
+Check trading_bot.log for errors.
+Functionality
+
+The script performs the following tasks:
+
+Ticker Selection:
+Combines optional static tickers list (e.g., BTC-USD, WBTC-USD) with those from a list of available options e.g. top 100 by marketcap.
+
+Data Retrieval:
+Fetches 365 days of daily OHLCV data from Binance for each ticker using get_klines.
+
+Technical Analysis:
+Calculates indicators (RSI, Bollinger Bands, MAs, EMAs, MACD, Ichimoku Cloud).
+Identifies market state (bullish, bearish, sideways) based on MA slope, price change, and Bollinger Band width.
+Detects candlestick patterns and breakout/breakdown signals (optional confirmation).
+
+Signal Generation:
+Scores indicators using market state-specific weights and thresholds.
+Generates buy/sell/hold signals based on score thresholds.
+Applies confirmation checks (candlestick patterns, breakouts) if enabled.
+
+Trade Execution:
+Places limit orders for buys/sells with GTC (Good Till Cancelled) time-in-force.
+Allocates USDT balance using market state-specific percentages: e.g. 10% (bullish), 5% (sideways), 2% (bearish).
+
+Enforces a user definable max concentration per coin.
+Optionally places stop-loss (e.g. 10% below entry) and take-profit (e.g. 5% above entry) orders. Requires sufficient crypto balance to place traditional stop loss and trailing stop losses.
+Tracks pending orders in pending_orders.json.
+
+Visualisation:
+Generates plots with price, indicators, and support/resistance levels.
+Saves charts and text summaries to the specified directory.
+
+Scheduling:
+Runs daily at 00:10 UTC and hourly from 01:05 to 23:05 UTC.
+Deletes old files daily to manage disk space.
+
+Portfolio Management:
+Monitors holdings and total portfolio value in USDT.
+Generates a summary of trades, and holdings.
+
+Weights and Thresholds
+The script uses a weighted scoring system to generate trading signals, with weights and thresholds defined in MARKET_STATE_CONFIG. These are tailored to three market states:
+
+Note on Weights and Thresholds: Weights and thresholds can be further tuned using a stand-alone backtest script and can be optimised for select tickers for both bullish and sideways market conditions.
+
+Recommendation: Use Binance Testnet to test the script with your chosen parameters. For production, develop a trusted test script to optimise weights and thresholds based on historical data.
+
+Operation
+Running the Script
+Prepare Environment:
+Ensure .env file contains valid API keys in same folder as main.py.
+Verify directory paths are correct and writable.
+
+Choose Mainnet or Testnet:
+Testnet (recommended for testing):
+
+Fund your testnet account with USDT via Binance Testnet.
+Mainnet (real funds):
+Use the default client initialization:
+python
+
+client = Client(api_key, api_secret)
+Ensure sufficient USDT balance and understand the financial risks.
+Run the Script:
+Execute the script:
+
+python main.py
+The script will start the scheduler, running at 00:10 UTC and hourly from 01:05 to 23:05 UTC.
+Monitor Output:
+Console: Displays real-time logs, account balances, and trade summaries.
+
+Log File: Check trading_bot.log for detailed logs, including errors and order statuses.
+
+Output Files: Charts (PNG) and text summaries (TXT) are saved to the 'Daily' directory.
+
+Portfolio Summary: Generated as a TXT file with trade details and holdings.
+
+Stop the Script:
+Press Ctrl+C to stop the scheduler.
+Ensure all pending orders are monitored (stored in pending_orders.json).
+
+Configuration Options
+Toggle Testnet/Mainnet:
+
+Time Restriction:
+Set ENABLE_TIME_RESTRICTION = True to restrict buys to 00:00–00:15 UTC; set to False to allow anytime.
+Search for ENABLE_TIME_RESTRICTION in binance_api and main.
+
+Force Buy:
+Set FORCE_BUY_ENABLED = True and specify FORCE_BUY_TICKER (e.g., BTC-USD) for testing.
+
+Plotting:
+Set PLOT_ENABLED = True to generate charts; set to False to disable and save resources.
+
+Take-Profit Mode:
+Set TAKE_PROFIT_ONLY_MODE = True for take-profit orders only; set to False for stop-loss and take-profit.
+
+Best Practices
+Start with Testnet: Always test strategies on Binance Testnet to avoid financial losses.
+Backtest Parameters: Develop a test script to optimize weights and thresholds using historical data (see Weights and Thresholds section).
+
+Monitor Logs: Regularly check trading_bot.log for errors, especially API rate limits or order rejections.
+
+Risk Management:
+Ensure sufficient USDT balance to meet minimum notional requirements.
+Review concentration limits (MAX_COIN_CONCENTRATION = 0.3) to avoid overexposure.
+
+API Rate Limits: Binance imposes limits (e.g., 1200 requests/minute). Monitor API usage and add delays if needed.
+Troubleshooting
+
+API Errors:
+Error -2013 (Order Not Found): Check pending_orders.json for stale orders and remove manually.
+
+Rate Limit Exceeded: Add time.sleep(0.1) between API calls or use a rate limiter (e.g., ratelimit package).
+
+Dependency Issues:
+Ensure TA-Lib is installed correctly; verify with import talib.
+Update packages: pip install --upgrade <package>.
+
+File Path Errors:
+Update paths to match your system and ensure write permissions.
+Insufficient Balance:
+Check usdt_balance in logs and fund your account (testnet or mainnet).
+
+Disclaimer
+Financial Risk: Trading cryptocurrencies involves significant risk. Use mainnet at your own risk and only with funds you can afford to lose. Again, you may lose all you investment.
+
+Testing: Always validate strategies on Binance Testnet before deploying on mainnet (note binance testnet can include prices that don't match live trading). Run bot for a few months with minimum trade sizes.
+
+Parameters: Optimised weights and thresholds can be researched using back-testing scripts. Contact the developer or develop your own. These come with the same risks - all investment can be lost regardless of parameter settings.
+
+This guide provides a quick overview to get started with the trading bot.
